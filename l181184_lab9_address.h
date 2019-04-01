@@ -1,4 +1,3 @@
-//Address.h
 #include <iostream>
 using namespace std;
 
@@ -20,7 +19,7 @@ public:
 	// an overloaded constructor
 	Address(const Address&);
 	//copy constructor
-	
+
 	const Address &   operator=(const Address& other);
 	//overloaded assignment operator
 	~Address();
