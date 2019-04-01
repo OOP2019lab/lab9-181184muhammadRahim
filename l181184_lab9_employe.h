@@ -9,11 +9,11 @@ class Employee
 {
 	friend ostream& operator<<(ostream& osObject, const Employee&);
 	//overloaded insertion operator
-
 private:
 	char* emp_name;
 	//Add Data Members here
 	Address *a;
+	Project** projects;
 public:
 	Employee(char* name, const Address&);
 	//overloaded constructor
@@ -21,10 +21,8 @@ public:
 	//copy constructor
 	const Employee &   operator=(const Employee& other);
 	//overloaded assignment operator
-
 	void addProject(Project const *);
 	void removeProject(Project const *);
-
 	~Employee();
 
 };
