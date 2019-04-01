@@ -10,8 +10,8 @@ Project::Project(const Project& a)
 {
 	this->name = new char[strlen(a.name)];
 	strcpy(this->name, a.name);
-	this->budget = budget;
-	this->duration = duration;
+	this->budget = a.budget;
+	this->duration = a.duration;
 }
 ostream& operator<<(ostream& osObject, const Project& a)
 {
@@ -25,4 +25,13 @@ const Project & Project::operator=(const Project & other)
 	strcpy(this->name, other.name);
 	budget = other.budget;
 	duration = other.duration;
+	return *this;
+}
+void Project::setBudget(int a)
+{
+	this->budget = a;
+}
+Project::~Project()
+{
+	delete this->name;
 }
