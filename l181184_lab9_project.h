@@ -1,18 +1,10 @@
-#include <iostream>
-using namespace std;
-
-#ifndef PROJECT_H
 #define PROJECT_H
 class Project
 {
-	friend ostream& operator<<(ostream& osObject, const Project&);
-	//overloaded insertion operator
-
-private:
 	char* name;
 	int budget;
 	int duration; //estimate duration of project in weeks
-
+	friend class Employee;
 public:
 	Project(char* name, int budget, int duration);
 	// an overloaded constructor
@@ -20,6 +12,8 @@ public:
 	//copy constructor
 	const Project &   operator=(const Project& other);
 	//overloaded assignment operator
+	friend ostream& operator<<(ostream& osObject, const Project&);
+	//overloaded insertion operator
 	void setBudget(int);
 	~Project();
 };
